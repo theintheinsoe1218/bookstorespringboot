@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.thymeleaf.org">
+  <th:block th:insert="~{layouts/shares::head}"> </th:block>
+  <body>
+    <th:brock th:insert="~{layouts/nav::nav}"> </th:brock>
+
+    <div class="container my-5">
+      <h5 class="text-center my-5">Add New Category</h5>
+      <form action="/register" method="post">
+        <div class="col-md-4 offset-md-4">
+          <div class="mb-3">
+            <label for="categoryname" class="form-label"
+              >Category Name :
+            </label>
+            <input
+              type="text"
+              class="form-control rounded-0"
+              id="categoryname"
+              name="categoryname"
+              required
+            />
+          </div>
+
+          <div class="d-flex justify-content-between">
+            <a href="/roles" class="btn btn-warning btn-sm">Cancle</a>
+            <button type="submit" class="btn btn-primary btn-sm">Add</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <th:block th:insert="~{layouts/shares::foot}"></th:block>
+  </body>
+</html>

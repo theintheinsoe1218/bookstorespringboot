@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.thymeleaf.org">
+  <th:block th:insert="~{layouts/shares::head}"> </th:block>
+  <body>
+    <th:brock th:insert="~{layouts/nav::nav}"> </th:brock>
+
+    <div class="container my-5">
+      <h5 class="text-center my-5">Add New Book</h5>
+      <form
+        action="/admin/book/add"
+        method="post"
+        enctype="multipart/form-data"
+      >
+        <div class="col-md-6 offset-md-3">
+          <div class="mb-3">
+            <label for="categoryId" class="form-label"
+              >Select Category :
+            </label>
+            <select
+              class="form-select rounded-0 mb-3"
+              name="categoryId"
+              id="categoryId"
+            >
+              <option selected>Open this select menu</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="title" class="form-label">Title : </label>
+            <input
+              type="text"
+              class="form-control rounded-0"
+              id="title"
+              name="title"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="author" class="form-label">Author : </label>
+            <input
+              type="text"
+              class="form-control rounded-0"
+              id="author"
+              name="author"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="publicationDate" class="form-label"
+              >Publish Date :
+            </label>
+            <input
+              type="date"
+              class="form-control rounded-0"
+              id="publicationDate"
+              name="publicationDate"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="description" class="form-label">Descriptioin : </label>
+            <textarea
+              class="form-control"
+              id="description"
+              rows="3"
+              name="description"
+              required
+            ></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="price" class="form-label">Price : </label>
+            <input
+              type="number"
+              class="form-control rounded-0"
+              id="price"
+              name="price"
+              required
+              minlength="3"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="stock" class="form-label">Stock : </label>
+            <input
+              type="number"
+              class="form-control rounded-0"
+              id="stock"
+              name="stock"
+              required
+              min="2"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="formFile" class="form-label">Pick Cover Image</label>
+            <input
+              class="form-control"
+              type="file"
+              id="formFile"
+              name="coverImage"
+            />
+          </div>
+          <div class="d-flex justify-content-end">
+            <button type="submit" class="btn btn-primary btn-sm">Add</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <th:block th:insert="~{layouts/shares::foot}"></th:block>
+  </body>
+</html>
